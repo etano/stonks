@@ -26,7 +26,7 @@ logging.basicConfig(level=logging.INFO, format=format, stream=sys.stdout)
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
 auth = dash_auth.BasicAuth(
     app,
-    settings.VALID_USERNAME_PASSWORD_PAIRS
+    {settings.DASH_USERNAME: settings.DASH_PASSWORD}
 )
 app.layout = dbc.Container([
     html.H1(children='Brown Stonks'),
@@ -76,7 +76,7 @@ app.layout = dbc.Container([
         n_intervals=0
     )
 ])
-r.login(username=settings.USERNAME, password=settings.PASSWORD)
+r.login(username=settings.ROBINHOOD_USERNAME, password=settings.ROBINHOOD_PASSWORD)
 
 
 def get_orders() -> pd.DataFrame:

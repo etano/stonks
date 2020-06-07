@@ -1,0 +1,9 @@
+default:
+  cash_symbol: "Liquidity"
+  transfer_symbol: "Invested Capital"
+  total_symbol: "Overall"
+  refresh_interval_seconds: 600
+  dash_username: ""
+  dash_password: ""
+  robinhood_username: ""
+  robinhood_password: ""

@@ -4,3 +4,4 @@ dash-bootstrap-components
 dynaconf[yaml]
 robin-stocks
 pandas
+gunicorn
