@@ -1,4 +1,5 @@
 import dash
+import dash_auth
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
@@ -23,6 +24,10 @@ format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 logging.basicConfig(level=logging.INFO, format=format, stream=sys.stdout)
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+auth = dash_auth.BasicAuth(
+    app,
+    settings.VALID_USERNAME_PASSWORD_PAIRS
+)
 app.layout = dbc.Container([
     html.H1(children='Brown Stonks'),
     dcc.Loading(
