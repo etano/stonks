@@ -76,7 +76,6 @@ app.layout = dbc.Container([
         n_intervals=0
     )
 ])
-r.login(username=settings.ROBINHOOD_USERNAME, password=settings.ROBINHOOD_PASSWORD)
 
 
 def get_orders() -> pd.DataFrame:
@@ -259,6 +258,7 @@ def generate_figure(
     Input('interval-component', 'n_intervals')
 ])
 def update_graphs(n):
+    r.login(username=settings.ROBINHOOD_USERNAME, password=settings.ROBINHOOD_PASSWORD)
     orders = get_orders()
     transfers = get_transfers()
     transactions = get_transactions(orders, transfers)
