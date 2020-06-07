@@ -24,6 +24,7 @@ format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 logging.basicConfig(level=logging.INFO, format=format, stream=sys.stdout)
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX])
+server = app.server
 auth = dash_auth.BasicAuth(
     app,
     {settings.DASH_USERNAME: settings.DASH_PASSWORD}
