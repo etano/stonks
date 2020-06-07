@@ -1,3 +1,5 @@
- dash
- dynaconf[yaml]
- robin-stocks
+dash
+dash-bootstrap-components
+dynaconf[yaml]
+robin-stocks
+pandas
